@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Mobile App Interface</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<style>
+  body { font-family: 'Cairo', sans-serif; }
+  .header-bg { background-color: rgb(235, 227, 216); }
+  .tab-active { color: #A49383; border-bottom: 3px solid #AC9173; }
+  .icon { fill: currentColor; }
+</style>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+
+
+<!-- App Content -->
+<div class="p-4">
+  <div class="bg-white rounded-lg shadow p-4">
+    <h2 class="text-lg font-semibold">الحجز في الوزارة - رمضان</h2>
+    <p class="text-sm my-2">يوم السبت، 11 يوليو 2024</p>
+    <p class="text-sm my-2">من 14:30 إلى 14:59</p>
+    <p class="text-sm my-2">عدد التذاكر: 1</p>
+    <p class="text-sm my-2">رقم الحجز: 122</p>
+  </div>
+
+  <div class="flex justify-between items-center mt-4">
+    <button class="bg-green-500 text-white py-2 px-4 rounded">عرض التفاصيل</button>
+    <button class="bg-gray-300 text-gray-700 py-2 px-4 rounded">الخلف</button>
+  </div>
+</div>
+
+<!-- Navigation Bar -->
+<div class="fixed inset-x-0 bottom-0 bg-white py-2">
+  <div class="flex justify-around items-center">
+    <span class="icon w-6 h-6">🏠</span>
+    <span class="icon w-6 h-6">🔍</span>
+    <span class="icon w-6 h-6">📅</span>
+    <span class="icon w-6 h-6">👤</span>
+  </div>
+</div>
+
+</body>
+</html>

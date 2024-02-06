@@ -1,0 +1,55 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - main  # Set this to the branch you want to trigger the build
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+
+    - name: Install Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'  # Use the node version that matches your development environment
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: ./svelte-app
+
+    - name: Build
+      env:
+        BASE_PATH: '/${{ github.event.repository.name }}'
+      run: npm run build
+      working-directory: ./svelte-app
+
+    - name: Upload artifact
+      id: upload-artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        name: github-pages
+        path: ./svelte-app/build/
+        if-no-files-found: error
+
+    # Deploy job
+  deploy:
+    # Add a dependency to the build job
+    needs: build
+    # Deploy to the github-pages environment
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    # Specify runner + deployment step
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

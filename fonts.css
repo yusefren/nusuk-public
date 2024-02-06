@@ -1,0 +1,29 @@
+/* fonts.css */
+@font-face {
+    font-family: 'Cairo';
+    src: url('/fonts/Cairo-Regular.woff2') format('woff2'),
+         url('/fonts/Cairo-Regular.ttf') format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  @font-face {
+    font-family: 'Cairo';
+    src: url('/fonts/Cairo-Bold.woff2') format('woff2'),
+         url('/fonts/Cairo-Bold.ttf') format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+  }
+
+  @font-face {
+    font-family: 'Cairo';
+    src: url('/fonts/Cairo-SemiBold.woff2') format('woff2'),
+         url('/fonts/Cairo-SemiBold.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+  }
+  
+  /* Include other font weights and styles as needed */
