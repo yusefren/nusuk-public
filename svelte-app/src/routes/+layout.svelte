@@ -1,9 +1,12 @@
 <script>
 	import Header from './Header.svelte';
 	import Footer from './Footer.svelte';
+	import { dev } from '$app/environment';
+	import { inject } from '@vercel/analytics';
 	import './styles.css';
 	import { drawerOpen } from './store.js';
 	import Tabs from './../lib/Tabs.svelte';
+	inject({ mode: dev ? 'development' : 'production' });
 </script>
 
 <div dir="rtl" class="sticky flex flex-col h-screen overscroll-y-contain">
